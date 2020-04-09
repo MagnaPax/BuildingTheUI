@@ -50,6 +50,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         // Only allow photos to be picked, not taken.
         imagePickerController.sourceType = .photoLibrary
+        
+        // Make sure ViewController is notified when the user picks an image.
+        // image picker controller 의 delegate 를 ViewController 로 설정하기 위해
+        imagePickerController.delegate = self
     }
 }
 
