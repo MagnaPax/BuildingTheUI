@@ -44,7 +44,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     // 사용자가 picker 로부터 선택한 사진들로 무엇인가를 할 수 있는 메소드
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
- 
+        // The info dictionary may contain multiple representations of the images. You want to use the original.
+        guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+            fatalError("Expected a dictionary containing image, but was provided the following: \(info)")
+        }
     }
     
     //MARK: Actions
