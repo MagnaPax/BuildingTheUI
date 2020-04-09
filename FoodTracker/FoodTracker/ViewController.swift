@@ -48,6 +48,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
             fatalError("Expected a dictionary containing image, but was provided the following: \(info)")
         }
+        
+        // Set photoImageView to display the selected image.
+        photoImageView.image = selectedImage
     }
     
     //MARK: Actions
