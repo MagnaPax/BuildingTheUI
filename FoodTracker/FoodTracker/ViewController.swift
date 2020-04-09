@@ -24,8 +24,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
 
     //MARK: UITextFieldDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
         // Hide the keyboard.
         textField.resignFirstResponder()
+        
         return true
     }
     
@@ -39,8 +41,12 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
+        
         // Hide the keyboard.
         nameTextField.resignFirstResponder()
+        
+        // UIImagePickerController is a view controller that lets a user pick media from their photo library.
+        let imagePickerController = UIImagePickerController()
     }
 }
 
